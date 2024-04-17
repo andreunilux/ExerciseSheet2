@@ -1,0 +1,38 @@
+#Windows
+
+$LOGIN = "adussing"
+
+# Upload files in current directory 
+scp -P 8022 *.sh "$LOGIN@access-iris.uni.lu:~/" 
+scp -P 8022 *.java "$LOGIN@access-iris.uni.lu:~/problem1" 
+ssh -p 8022 "$LOGIN@access-iris.uni.lu"
+
+
+
+# MAC BASH
+#!/bin/bash
+LOGIN = "adussing"
+
+# Upload files in current directory 
+scp -P 8022 *.sh $LOGIN@access-iris.uni.lu:~/
+ssh -p 8022 $LOGIN@access-iris.uni.lu
+
+
+#SAME
+srun -p interactive --pty bash -i
+chmod +x P1bash.sh
+.\P1bash.sh
+scp -P 8022 Wikipedia-En-41784-Articles.tar.gz  $LOGIN@access-iris.uni.lu:~/
+scp -P 8022 *.java $LOGIN@access-iris.uni.lu:~/problem1
+tar xf Wikipedia-En-41784-Articles.tar.gz 
+chmod +x P1bash.sh
+./P1bash.sh
+
+
+#look at the results
+
+
+cat problem1/word-count/part-r-*
+cat problem1/word-pairs/part-r-*
+cat problem1/word-stripes/part-r-*
+

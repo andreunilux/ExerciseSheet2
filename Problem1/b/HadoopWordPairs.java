@@ -26,13 +26,14 @@ public class HadoopWordPairs extends Configured implements Tool {
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
-			String[] splitLine = value.toString().split(" ");
+			String[] splitLine = value.toString().ToLowerCase().split("\\W+");
 
-			for (String w : splitLine) {
-				if (lastWord.getLength() > 0) {
-					pair.set(lastWord + ":" + w);
-					context.write(pair, one);
-				}
+			// Filter words
+			if(w.matches("[a-z]+")) {
+				pair.set(lastWord + ":" + w); // Emit as word
+				context.write(pair, one);
+			}
+			if( w.matches("[a-z]+")) {
 				lastWord.set(w);
 			}
 		}
@@ -47,8 +48,11 @@ public class HadoopWordPairs extends Configured implements Tool {
 
 			for (IntWritable value : values)
 				sum += value.get();
-
-			context.write(key, new IntWritable(sum));
+			
+			if(sum == 1000){
+				context.write(key, new IntWritable(sum));
+			}
+			
 		}
 	}
 

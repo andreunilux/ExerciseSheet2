@@ -45,7 +45,7 @@ public class HadoopWordStripes extends Configured implements Tool {
 					stripe(w, map);
 					}
 				}
-				if(splitLine[i].matches("[a-z]{5,25}") || splitLine[i].matches("[0-9]{2,12}") ){
+				if( (splitLine[i].matches("[a-z]{5,25}") || splitLine[i].matches("[0-9]{2,12}")) && !(map.isEmpty()) ){
 				context.write(new Text(splitLine[i]), map);
 				}
 			}

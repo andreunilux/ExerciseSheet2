@@ -25,12 +25,8 @@ public class HadoopWordStripes extends Configured implements Tool {
 
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-			//Original
-			//String[] splitLine = value.toString().split(" ");
-			//Updated code
-			String[] splitLine = value.toString().toLowerCase().split("\\b[a-z]{5,25}\\b|\\b\\d{2,12}\\b");
-
 			
+			String[] splitLine = value.toString().split(" ");
 
 			for (int i = 0; i < splitLine.length; i++) {
 				MapWritable map = new MapWritable();

@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -16,6 +18,9 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
+
+
+//Class HadoopWordCount
 public class HadoopWordCount extends Configured implements Tool {
 
 	public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
@@ -56,6 +61,14 @@ public class HadoopWordCount extends Configured implements Tool {
 		}
 	}
 
+
+
+
+
+
+
+
+	
 	@Override
 	public int run(String[] args) throws Exception {
 		Job job = Job.getInstance(new Configuration(), "HadoopWordCount");
@@ -78,8 +91,18 @@ public class HadoopWordCount extends Configured implements Tool {
 		return 0;
 	}
 
+
+
+
+
+
+
+
 	public static void main(String[] args) throws Exception {
 		int ret = ToolRunner.run(new Configuration(), new HadoopWordCount(), args);
 		System.exit(ret);
 	}
 }
+
+
+

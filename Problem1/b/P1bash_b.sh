@@ -49,11 +49,11 @@ echo $CLASSPATH
 
 # Compile all java files
 javac *.java
-sleep 2
+
 # Make java files executable
 jar -cvf HadoopWordCount.jar HadoopWordCount*.class
 jar -cvf HadoopWordPairs.jar HadoopWordPairs*.class
-
+sleep 5
 
 # Run the jar files
 

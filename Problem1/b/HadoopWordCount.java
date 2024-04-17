@@ -26,7 +26,7 @@ public class HadoopWordCount extends Configured implements Tool {
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			
-			String[] splitLine = value.toString().toLowerCase().split("\\W+");
+			String[] splitLine = value.toString().toLowerCase().split(" ");
 			
 			for (String w : splitLine) {
 				if( w.matches("[a-zA-Z]+") ){
@@ -49,7 +49,7 @@ public class HadoopWordCount extends Configured implements Tool {
 			for (IntWritable value : values)
 				sum += value.get();
 			
-			if(sum == 1000){
+			if(sum >= 1000){
 				context.write(key, new IntWritable(sum));
 			}
 			

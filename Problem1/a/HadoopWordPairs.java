@@ -29,17 +29,11 @@ public class HadoopWordPairs extends Configured implements Tool {
 			String[] splitLine = value.toString().toLowerCase().split("[^a-z0-9]"); // Line Changed! 
 		    for (String w : splitLine) {
 				// Filter words
-				if (w.matches("[a-z]{5,25}")) {
+				if ((w.matches("[a-z]{5,25}")) || (w.matches("[0-9]{2,12}")) ){
 					pair.set(lastWord + ":" + w); // Emit as word
 					context.write(pair, one);
 				}
-				// Filter numbers
-				if (w.matches("[0-9]{2,12}")) {
-					pair.set(lastWord + ":" + w); // Emit as number
-					context.write(pair, one);
-				}
-
-				if( (w.matches("[a-z{5,25}]")) || (w.matches("[0-9]{2,12}")) ){
+				if( (w.matches("[a-z]{5,25}")) || (w.matches("[0-9]{2,12}")) ){
 					lastWord.set(w);
 				}
 				

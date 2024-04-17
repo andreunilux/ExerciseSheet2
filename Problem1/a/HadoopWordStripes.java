@@ -34,18 +34,18 @@ public class HadoopWordStripes extends Configured implements Tool {
 
 				if (i > 0) {
 					w = splitLine[i - 1];
-					if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
+					if(w.matches("[a-z]{5,25}") || w.matches("[0-9]{2,12}") ){
 					stripe(w, map);
 					}
 				}
 
 				if (i < splitLine.length - 1) {
 					w = splitLine[i + 1];
-					if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
+					if(w.matches("[a-z]{5,25}") || w.matches("[0-9]{2,12}") ){
 					stripe(w, map);
 					}
 				}
-				if(splitLine[i].matches("[a-z{5,25}]") || splitLine[i].matches("[0-9]{2,12}") ){
+				if(splitLine[i].matches("[a-z]{5,25}") || splitLine[i].matches("[0-9]{2,12}") ){
 				context.write(new Text(splitLine[i]), map);
 				}
 			}

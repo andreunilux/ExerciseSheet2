@@ -1,0 +1,25 @@
+
+
+# Create folder 
+mkdir problem1
+cd problem1
+# Upload files in current directory 
+scp -P H* <yourlogin>@access-iris.uni.lu:~/problem1
+scp -P Wikipedia-En-41784-Articles.tar.gz  <yourlogin>@access-iris.uni.lu:~/
+tar -xf Wikipedia-En-41784-Articles.tar.gz 
+# Change directory
+cd problem1
+# Export classpath
+export CLASSPATH=`hadoop classpath`:.:
+echo $CLASSPATH
+# Compile all java files
+javac H*.java
+
+# Make java files executable
+jar -cvf HadoopWordCount.jar HadoopWordCount*.class
+
+# Run the jar file
+hadoop jar HadoopWordCount.jar HadoopWordCount ~/enwiki-articles/AA/ ~/hadoop-output-directory
+
+#look at the results
+cat ~/hadoop-output-directory2a/part-r-*

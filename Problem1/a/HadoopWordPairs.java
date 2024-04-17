@@ -39,7 +39,7 @@ public class HadoopWordPairs extends Configured implements Tool {
 					context.write(pair, one);
 				}
 
-				if(splitLine[i].matches("[a-z{5,25}]") || splitLine[i].matches("[0-9]{2,12}") ){
+				if( (w.matches("[a-z{5,25}]")) || (w.matches("[0-9]{2,12}")) ){
 					lastWord.set(w);
 				}
 				

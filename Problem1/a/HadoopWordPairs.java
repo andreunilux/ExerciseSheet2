@@ -26,7 +26,7 @@ public class HadoopWordPairs extends Configured implements Tool {
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			
-			String[] splitLine = value.toString().toLowerCase().split("[^a-zA-Z]"); // Line Changed! 
+			String[] splitLine = value.toString().toLowerCase().split("[^a-z0-9]"); // Line Changed! 
 		    for (String w : splitLine) {
 				// Filter words
 				if (w.matches("[a-z]{5,25}")) {

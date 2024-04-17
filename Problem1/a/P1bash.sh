@@ -34,7 +34,6 @@ remove_folder() {
 #Create necessary folders
 create_folder "problem1"
 tar -xf Wikipedia-En-41784-Articles.tar.gz -C ~/problem1
-sleep 2
 # Change to Folder
 cd problem1
 remove_folder "word-count"
@@ -50,7 +49,7 @@ echo $CLASSPATH
 
 # Compile all java files
 javac *.java
-
+sleep 2
 # Make java files executable
 jar -cvf HadoopWordCount.jar HadoopWordCount*.class
 jar -cvf HadoopWordPairs.jar HadoopWordPairs*.class

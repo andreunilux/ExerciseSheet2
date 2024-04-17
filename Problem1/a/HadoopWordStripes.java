@@ -26,7 +26,7 @@ public class HadoopWordStripes extends Configured implements Tool {
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			
-			String[] splitLine = value.toString().toLowerCase().split("\\W+"); // Line Changed! 
+			String[] splitLine = value.toString().toLowerCase().split("[^a-zA-Z]"); // Line Changed! 
 
 			for (int i = 0; i < splitLine.length; i++) {
 				MapWritable map = new MapWritable();
@@ -34,19 +34,20 @@ public class HadoopWordStripes extends Configured implements Tool {
 
 				if (i > 0) {
 					w = splitLine[i - 1];
-					if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
+					//if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
 						stripe(w, map);
-					}
+					//}
 				}
 
 				if (i < splitLine.length - 1) {
 					w = splitLine[i + 1];
-					if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
-						stripe(w, map);
-						}
+					//if(w.matches("[a-z{5,25}]") || w.matches("[0-9]{2,12}") ){
+					stripe(w, map);
+					//}
 				}
-
+				//if(splitLine[i].matches("[a-z{5,25}]") || splitLine[i].matches("[0-9]{2,12}") ){
 				context.write(new Text(splitLine[i]), map);
+				//}
 			}
 		}
 

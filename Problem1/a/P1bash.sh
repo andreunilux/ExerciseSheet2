@@ -59,7 +59,7 @@ jar -cvf HadoopWordStripes.jar HadoopWordStripes*.class
 # Run the jar files
 
 
-hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AB/ word-count
+hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AA/ word-count
 echo "#####################"
 echo "Finished  JOB 1/3"
 echo "#####################"

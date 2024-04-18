@@ -1,10 +1,10 @@
 #!/bin/bash
-LOGIN = "adussing"
+LOGIN="adussing"
 
 # Upload files in current directory 
-scp -P Wikipedia-En-41784-Articles.tar.gz  $LOGIN@access-iris.uni.lu:~/
-scp -P *.sh $LOGIN@access-iris.uni.lu:~/
-scp -P *.java $LOGIN@access-iris.uni.lu:~/problem1
+scp -P 8022 Wikipedia-En-41784-Articles.tar.gz  $LOGIN@access-iris.uni.lu:~/
+scp -P 8022 *.sh $LOGIN@access-iris.uni.lu:~/
+scp -P 8022 *.java $LOGIN@access-iris.uni.lu:~/problem1
 
 
 

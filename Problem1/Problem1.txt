@@ -3,7 +3,7 @@ Big Data
 Group 3:
 
 Problem 1:
-You need to have an HPC Account. The shell scripts are written in Bash.
+You need to have an HPC UNI LU Account. The shell scripts are written in Bash.
 
 
 A)
@@ -19,6 +19,16 @@ exit
 2.Download the Wikipedia articles (Wikipedia-En-41784-Articles.tar.gz) from Moodle and put it into the folder Problem1/a.
 3.Change the variable LOGIN to your user credentials.
 4.Execute Upload.sh
+
+or
+
+4.Manually:
+Current folder Problem1/a
+LOGIN="adussing"  //change to your name
+scp -P 8022 Wikipedia-En-41784-Articles.tar.gz  $LOGIN@access-iris.uni.lu:~/
+scp -P 8022 *.sh $LOGIN@access-iris.uni.lu:~/
+scp -P 8022 *.java $LOGIN@access-iris.uni.lu:~/problem1
+
 5.Connect to the HPC 
 ssh -p 8022 <your-login>@access-iris.uni.lu
 srun -p interactive --pty bash -i
@@ -32,8 +42,15 @@ cat problem1/word-count/part-r-*
 cat problem1/word-pairs/part-r-*
 cat problem1/word-stripes/part-r-*
 
+8) Download if you want
+scp -P 8022 adussing@access-iris.uni.lu:~/problem1/word-pairs/part-r-* .
+scp -P 8022 adussing@access-iris.uni.lu:~/problem1/word-count/part-r-* .
+scp -P 8022 adussing@access-iris.uni.lu:~/problem1/word-stripes/part-r-* .
 
 B)
+Upload the files in folder b)
+
+
 1.Connect to the HPC 
 ssh -p 8022 <your-login>@access-iris.uni.lu
 srun -p interactive --pty bash -i
@@ -52,7 +69,8 @@ cat problem1_b/word-pairs100/part-r-*
 3.
 
 C)
-You can see the times in time_of_jpbs.txt
+You can see the runtime in time_of_jobs.txt. It seems to be that my solution has poor scalability. 
+
 
 
 

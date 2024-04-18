@@ -1,0 +1,264 @@
+------------ PROBLEM 2 SOLUTIONS -----------------
+In order to deploy our SparkWordCount.scala program on the IRIS HPC cluster, here are the command lines we need to execute in our terminal (in order) : 
+
+ssh -p 8022 <yourlogin>@access-iris.uni.lu
+
+scp -P 8022 Problem2.scala <yourlogin>@access-iris.uni.lu:~/
+(run the above command from a local command-line shell from the 'Problem 2' folder)
+scp -P 8022 enwiki-articles.zip <yourlogin>@access-iris.uni.lu:~/
+(we need to run this from a local command-line shell where we downloaded the Wikipedia files)
+
+srun -p interactive --pty bash -i
+
+unzip enwiki-articles.zip
+
+scalac -classpath $(echo $SPARK_HOME/jars/*jar | tr ' ' ':') Problem2.scala
+jar -cvf ./Problem2.jar *.class
+spark-submit —class SparkWordCount Problem2.jar ./enwiki-articles/AA SparkOutput
+
+Note that we need to remove the SparkOutput directory after we are done parsing the AA wiki subdirectroy in order to parse more wiki subdirectories, as the directory won't be overridden. To do this, we type in :
+rm -r SparkOutput
+
+For questions b1 and b2, the outputs are storred in a lot of different directories that we will not reference here. We suggest to have a look at them after running the code.
+
+(b3) Here are the top-100 most frequent individual words (not numbers) in subdirectory AA:
+(the,573670)
+(of,297493)
+(and,232202)
+(in,208559)
+(to,169445)
+(a,155705)
+(is,84090)
+(as,73182)
+(was,66922)
+(for,60745)
+(by,58312)
+(that,56869)
+(with,54803)
+(on,47735)
+(are,39654)
+(from,39530)
+(it,33355)
+(his,32312)
+(an,31188)
+(or,31053)
+(at,30388)
+(be,29493)
+(which,29096)
+(were,26111)
+(he,26036)
+(this,24920)
+(have,21465)
+(has,20204)
+(not,20203)
+(also,19462)
+(had,18085)
+(their,17841)
+(its,17781)
+(but,17238)
+(other,15924)
+(one,15675)
+(been,15093)
+(they,14875)
+(first,14701)
+(such,13101)
+(some,12979)
+(most,12770)
+(more,12655)
+(can,11987)
+(after,11938)
+(used,11644)
+(two,11533)
+(who,11273)
+(all,11197)
+(into,11059)
+(new,10697)
+(when,10682)
+(than,10527)
+(many,10512)
+(there,10382)
+(these,10326)
+(may,9918)
+(only,9772)
+(during,9555)
+(between,9371)
+(would,8988)
+(over,7723)
+(while,7494)
+(about,7350)
+(known,6887)
+(use,6724)
+(both,6606)
+(where,6481)
+(called,6248)
+(no,6240)
+(early,6126)
+(through,6068)
+(number,6060)
+(being,6042)
+(made,5986)
+(if,5907)
+(since,5889)
+(time,5859)
+(under,5825)
+(became,5699)
+(united,5602)
+(three,5569)
+(including,5562)
+(then,5524)
+(any,5418)
+(often,5380)
+(because,5308)
+(her,5253)
+(up,5248)
+(part,5226)
+(world,5214)
+(several,5165)
+(each,5110)
+(later,5017)
+(out,4940)
+(city,4914)
+(so,4800)
+(well,4782)
+(american,4718)
+(same,4707)
+
+(b4) Here are the top-100 most frequent pairs of tokens, where the first token is a number and the second token is a word (in the subdirectory AA):
+(1 and,108)
+(1 january,105)
+(2005 and,80)
+(18 and,73)
+(65 years,71)
+(1 to,70)
+(2 and,68)
+(2006 and,62)
+(2007 and,59)
+(2000 and,59)
+(1999 and,58)
+(1 in,56)
+(2003 and,55)
+(2008 and,54)
+(15 and,54)
+(10 years,54)
+(20 years,54)
+(24 hours,54)
+(2011 the,52)
+(2004 and,51)
+(2001 and,50)
+(5 to,49)
+(2010 and,48)
+(2013 and,47)
+(2010 the,47)
+(10 to,46)
+(2002 and,46)
+(3 and,45)
+(30 years,45)
+(4 and,45)
+(5 and,45)
+(2009 and,44)
+(1980 and,44)
+(2014 the,43)
+(2011 and,42)
+(1991 and,42)
+(2013 the,42)
+(1 july,41)
+(1990 to,41)
+(1 april,41)
+(25 to,40)
+(31 december,39)
+(0 and,39)
+(2012 and,39)
+(1994 and,39)
+(1984 and,38)
+(1998 and,38)
+(10 percent,37)
+(6 and,37)
+(18 to,37)
+(1995 and,36)
+(15 years,36)
+(2000 to,36)
+(1996 and,35)
+(1989 and,35)
+(100 females,35)
+(2005 the,34)
+(1986 and,34)
+(2008 to,33)
+(2009 the,33)
+(50 years,32)
+(18 years,32)
+(0 to,32)
+(2004 to,32)
+(2006 the,32)
+(1997 and,32)
+(40 years,32)
+(50 percent,31)
+(2 to,31)
+(1990 and,31)
+(1 million,31)
+(10 million,31)
+(2010 was,31)
+(2 million,31)
+(1998 to,31)
+(30 june,31)
+(2011 census,31)
+(1970 and,30)
+(1983 and,30)
+(2015 the,30)
+(1 october,30)
+(20 percent,29)
+(2012 the,29)
+(1964 and,29)
+(10 and,29)
+(1992 and,29)
+(2 or,29)
+(45 to,29)
+(1997 to,29)
+(7 and,29)
+(2009 to,29)
+(12 years,28)
+(2005 to,28)
+(2008 the,28)
+(1979 and,27)
+(1975 and,27)
+(9 november,27)
+(1972 and,27)
+(2001 to,27)
+(18 living,27)
+
+
+(c) We ran everything on the Iris HPC Cluster, and got the following run times (they can be found in the RunTimeList.txt after each run):
+
+Subdirectory AA:
+Question a : 1131, Question b1 : 11, Question b2 : 14, Question b3 : 21912, Question b4 : 124970
+
+Subdirectories AA, AB:
+Question a : 1192, Question b1 : 19, Question b2 : 38, Question b3 : 38198, Question b4 : 213360
+
+Subdirectories AA, AB, AC:
+Question a : 1806, Question b1 : 31, Question b2 : 13, Question b3 : 56160, Question b4 : 358660
+
+Subdirectories AA, AB, AC, AD:
+Question a : 1884, Question b1 : 34, Question b2 : 22, Question b3 : 70424, Question b4 : 468770
+
+Subdirectories AA, AB, AC, AD, AE:
+Question a : 2436, Question b1 : 37, Question b2 : 23, Question b3 : 89403, Question b4 : 550870
+
+Subdirectories AA, AB, AC, AD, AE, AF:
+Question a : 2918, Question b1 : 21, Question b2 : 34, Question b3 : 108994, Question b4 : 673530
+
+Subdirectories AA, AB, AC, AD, AE, AF, AG:
+Question a : 3984, Question b1 : 44, Question b2 : 15, Question b3 : 146769, Question b4 : 863620
+
+Subdirectories AA, AB, AC, AD, AE, AF, AG, AH:
+Question a : 3974, Question b1 : 36, Question b2 : 10, Question b3 : 162930, Question b4 : 943220
+
+Subdirectories AA, AB, AC, AD, AE, AF, AG, AH, AI:
+Question a : 4313, Question b1 : 38, Question b2 : 30, Question b3 : 187050, Question b4 : 108773
+
+Subdirectories AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ:
+Question a : 4541, Question b1 : 35, Question b2 : 10, Question b3 : 207989, Question b4 : 1195390
+
+Subdirectories AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK:
+Question a : 4839, Question b1 : 51, Question b2 : 42, Question b3 : 225446, Question b4 : 1255790
+
+The solution seems to have good scalability, except for the B4 question (the run time "explodes" with subdirectories AA to AJ and AA to AK).

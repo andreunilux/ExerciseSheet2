@@ -1,0 +1,110 @@
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+
+ completed in 26488 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+
+ completed in 45629 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+
+ completed in 65587 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+
+ completed in 121778 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+
+ completed in 108006 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+
+ completed in 128998 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+Wikipedia-En-41784-Articles/AG/
+
+ completed in 149636 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+Wikipedia-En-41784-Articles/AG/
+Wikipedia-En-41784-Articles/AH/
+
+ completed in 170641 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+Wikipedia-En-41784-Articles/AG/
+Wikipedia-En-41784-Articles/AH/
+Wikipedia-En-41784-Articles/AI/
+
+ completed in 191605 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+Wikipedia-En-41784-Articles/AG/
+Wikipedia-En-41784-Articles/AH/
+Wikipedia-En-41784-Articles/AI/
+Wikipedia-En-41784-Articles/AJ/
+
+ completed in 209018 milliseconds
+##############################################
+Job concerning directories: 
+Wikipedia-En-41784-Articles/AA/
+Wikipedia-En-41784-Articles/AB/
+Wikipedia-En-41784-Articles/AC/
+Wikipedia-En-41784-Articles/AD/
+Wikipedia-En-41784-Articles/AE/
+Wikipedia-En-41784-Articles/AF/
+Wikipedia-En-41784-Articles/AG/
+Wikipedia-En-41784-Articles/AH/
+Wikipedia-En-41784-Articles/AI/
+Wikipedia-En-41784-Articles/AJ/
+Wikipedia-En-41784-Articles/AK/
+
+ completed in 221615 milliseconds
+##############################################

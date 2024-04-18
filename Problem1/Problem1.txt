@@ -1,0 +1,59 @@
+Big Data
+
+Group 3:
+
+Problem 1:
+You need to have an HPC Account. The shell scripts are written in Bash.
+
+
+A)
+Steps 
+1.
+ssh -p 8022 <your-login>@access-iris.uni.lu
+srun -p interactive --pty bash -i
+mkdir problem1
+mkdir problem1_b
+exit
+exit
+
+2.Download the Wikipedia articles (Wikipedia-En-41784-Articles.tar.gz) from Moodle and put it into the folder Problem1/a.
+3.Change the variable LOGIN to your user credentials.
+4.Execute Upload.sh
+5.Connect to the HPC 
+ssh -p 8022 <your-login>@access-iris.uni.lu
+srun -p interactive --pty bash -i
+chmod +x P1bash.sh
+
+6.Run the sript
+./P1bash.sh
+
+7.Have a look at the results
+cat problem1/word-count/part-r-*
+cat problem1/word-pairs/part-r-*
+cat problem1/word-stripes/part-r-*
+
+
+B)
+1.Connect to the HPC 
+ssh -p 8022 <your-login>@access-iris.uni.lu
+srun -p interactive --pty bash -i
+chmod +x P1bash.sh
+
+2.Run the sript
+./P1bash_b.sh
+
+3.Have a look at the results
+cat problem1_b/word-count/part-r-*
+cat problem1_b/word-pairs/part-r-*
+cat problem1_b/word-count100/part-r-*
+cat problem1_b/word-pairs100/part-r-*
+
+
+3.
+
+C)
+You can see the times in time_of_jpbs.txt
+
+
+
+

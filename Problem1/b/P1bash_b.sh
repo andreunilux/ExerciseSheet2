@@ -38,8 +38,8 @@ tar -xf Wikipedia-En-41784-Articles.tar.gz -C ~/problem1_b
 cd problem1_b
 remove_folder "word-count"
 remove_folder "word-pairs"
-remove_folder "word-stripes"
-
+remove_folder "word-count100"
+remove_folder "word-pairs100"
 
 
 
@@ -52,22 +52,25 @@ javac *.java
 
 # Make java files executable
 jar -cvf HadoopWordCount.jar HadoopWordCount*.class
-jar -cvf Top100Words.jar Top100Words*.class
+jar -cvf TopNWordCount.jar TopNWordCount*.class
 jar -cvf HadoopWordPairs.jar HadoopWordPairs*.class
+jar -cvf TopNWordCountPairs.jar TopNWordCountPairs*.class
 sleep 5
 
 # Run the jar files
 
 
-#hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AA/ word-count
+hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AA/ word-count
+hadoop jar TopNWordCount.jar TopNWordCount enwiki-articles/AA/ word-count100
 echo "#####################"
 echo "Finished  JOB 1/2"
-hadoop jar Top100Words.jar Top100Words enwiki-articles/AA/ word-count100
 echo "#####################"
-#hadoop jar HadoopWordPairs.jar HadoopWordPairs enwiki-articles/AA/ word-pairs
+hadoop jar HadoopWordPairs.jar HadoopWordPairs enwiki-articles/AA/ word-pairs
+hadoop jar TopNWordCountPairs.jar TopNWordCountPairs enwiki-articles/AA/ word-pairs100
 echo "#####################"
 echo "Finished  JOB 2/2"
 echo "#####################"
+
 
 echo "Finished Jobs. You can now look at the results"
 

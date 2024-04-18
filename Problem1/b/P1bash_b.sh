@@ -52,17 +52,19 @@ javac *.java
 
 # Make java files executable
 jar -cvf HadoopWordCount.jar HadoopWordCount*.class
+jar -cvf Top100Words.jar Top100Words*.class
 jar -cvf HadoopWordPairs.jar HadoopWordPairs*.class
 sleep 5
 
 # Run the jar files
 
 
-hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AA/ word-count
+#hadoop jar HadoopWordCount.jar HadoopWordCount enwiki-articles/AA/ word-count
 echo "#####################"
 echo "Finished  JOB 1/2"
+hadoop jar Top100Words.jar Top100Words enwiki-articles/AA/ word-count100
 echo "#####################"
-hadoop jar HadoopWordPairs.jar HadoopWordPairs enwiki-articles/AA/ word-pairs
+#hadoop jar HadoopWordPairs.jar HadoopWordPairs enwiki-articles/AA/ word-pairs
 echo "#####################"
 echo "Finished  JOB 2/2"
 echo "#####################"

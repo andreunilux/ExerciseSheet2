@@ -1,0 +1,5 @@
+To run exercise 3, parts a) b) and d) the lines of code can be run one by one in spark shell to produce the desired results. Note that the if else statements need to be copied and pasted in one block for the code to work.
+
+The .scala file can be compiled in Intellij Idea (spark 3.2.1 scala 2.12.15), but due to version issues we are having we were unable to run the compiled file (and thus also unable to test exercise c), note that this issue was already mentioned at the beginning of the semester but we were not given an answer/solution to this problem).
+
+In Exercise 3 c) we would expect the average to go down with the user defined average function. (We replace the null values with 23 which is lower than the average)
